@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/CountPanel.gd" type="Script" id=1]
+
+[node name="Panel" type="Panel"]
+margin_left = 208.0
+margin_top = 109.0
+margin_right = 808.0
+margin_bottom = 432.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CountLabel" type="Label" parent="."]
+margin_left = 242.0
+margin_top = 62.0
+margin_right = 355.0
+margin_bottom = 112.0
+text = "Count is: 0"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="DecreaseButton" type="Button" parent="."]
+margin_left = 189.0
+margin_top = 148.0
+margin_right = 269.0
+margin_bottom = 180.0
+text = "Decrease"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IncreaseButton" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 148.0
+margin_right = 384.0
+margin_bottom = 180.0
+text = "Increase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="DecreaseButton" to="." method="_on_DecreaseButton_button_up"]
+[connection signal="button_up" from="IncreaseButton" to="." method="_on_IncreaseButton_button_up"]
