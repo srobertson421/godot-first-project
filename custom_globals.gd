@@ -1,19 +1,16 @@
 extends Node
 
-var count = 0;
+var count: = 0 setget set_count, get_count
 
-func stuff():
-	print("stuff")
+var _subscriptions = {}
 
-func _ready():
-	PubSub.subscribe("count_increase", self)
-	PubSub.subscribe("count_decrease", self)
+func subscribe(key, funcRef):
+	_subscriptions[key] = funcRef
 
-func event_published(event_key):
-	print("global event listener", event_key)
-	if event_key == 'count_increase':
-		count += 1
-		PubSub.publish("count_changed", count)
-	if event_key == 'count_decrease':
-		count -= 1
-		PubSub.publish("count_changed", count)
+func set_count(newCount):
+	count = newCount
+	for key in _subscriptions:
+		_subscriptions[key].call_func()
+
+func get_count():
+	return count
