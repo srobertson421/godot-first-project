@@ -2,7 +2,6 @@
 
 [ext_resource path="res://blueprints/CountPanel/CountPanel.gd" type="Script" id=1]
 
-
 [node name="Panel" type="Panel"]
 margin_left = 208.0
 margin_top = 109.0
