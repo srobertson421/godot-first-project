@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Count="*res://Count.gd"
+Count="*res://state/Count.gd"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-extends "res://State.gd"
+extends "res://state/BaseState.gd"
 
 var count: = 0
 

@@ -4,7 +4,10 @@ onready var Count = $"/root/Count"
 
 func _ready():
 	updateCount()
-	Count.subscribe(self.get_instance_id(), funcref(self, "updateCount"))
+	Count.subscribe(
+		get_instance_id(),
+		funcref(self, "updateCount")
+	)
 
 func updateCount():
 	get_node("CountLabel").text = str("Count is: ", Count.count)

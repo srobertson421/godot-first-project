@@ -1,17 +1,11 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/CountPanel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://blueprints/CountPanel/CountPanel.tscn" type="PackedScene" id=1]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Panel" parent="." instance=ExtResource( 1 )]
-margin_left = 207.0
-margin_top = 4.0
-margin_right = 807.0
-margin_bottom = 327.0
-
-[node name="Panel2" parent="." instance=ExtResource( 1 )]
-margin_left = 206.0
-margin_top = 256.0
-margin_right = 806.0
-margin_bottom = 579.0
+margin_left = 241.0
+margin_top = 120.0
+margin_right = 841.0
+margin_bottom = 443.0
