@@ -1,14 +1,16 @@
 extends Panel
 
+onready var Count = $"/root/Count"
+
 func _ready():
 	updateCount()
-	CustomGlobals.subscribe(self.get_instance_id(), funcref(self, "updateCount"))
+	Count.subscribe(self.get_instance_id(), funcref(self, "updateCount"))
 
 func updateCount():
-	get_node("CountLabel").text = str("Count is: ", CustomGlobals.count)
+	get_node("CountLabel").text = str("Count is: ", Count.count)
 
 func _on_IncreaseButton_button_up():
-	EventBus.dispatch("increase_count")
+	Count.dispatch("increase_count")
 
 func _on_DecreaseButton_button_up():
-	EventBus.dispatch("decrease_count")
+	Count.dispatch("decrease_count")
