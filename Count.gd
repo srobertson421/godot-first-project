@@ -1,6 +1,6 @@
 extends "res://State.gd"
 
-var count: = 0 setget set_count, get_count
+var count: = 0
 
 func _init():
 	events = {
@@ -12,9 +12,6 @@ func set_count(newCount):
 	count = newCount
 	for key in _subscriptions:
 		_subscriptions[key].call_func()
-
-func get_count():
-	return count
 	
 func increase_count():
 	set_count(count + 1)
